@@ -27,6 +27,8 @@ namespace DegerveReferansTipler
              * deger typelar stackde gercekelesiyor
              * refernece typelar heapde gerceklesiyo
              */
+
+
         }
     }
 }
