@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Collections
 {
@@ -6,7 +7,26 @@ namespace Collections
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //string[] names = new string[] { "Sercan", "Ummu", "Sinan", "Hayri" };
+            //Console.WriteLine(names[0]);
+            //Console.WriteLine(names[1]);
+            //Console.WriteLine(names[2]);
+            //Console.WriteLine(names[3]);
+            //names = new string[5];
+            //names[4] = "Hakan";
+            //Console.WriteLine(names[4]);
+            //Console.WriteLine(names[0]);-->bunun ciktisi bos stringtir
+
+            //Arrayler yerine collections kullanimi daha efektiftir
+
+            List<string> names2 = new List<string>() { "Sercan", "Ummu", "Sinan", "Hayri" };
+            Console.WriteLine(names2[0]);
+            Console.WriteLine(names2[1]);
+            Console.WriteLine(names2[2]);
+            Console.WriteLine(names2[3]);
+            names2.Add("HAkan");
+            Console.WriteLine(names2[4]);
+            Console.WriteLine(names2[0]);
         }
     }
 }
