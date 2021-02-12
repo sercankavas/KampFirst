@@ -33,18 +33,26 @@ namespace OOP3
             VehicleCredit vehicle = new VehicleCredit();          
             MorgageCredit morgage = new MorgageCredit();
 
+            ILoggerService databaseloggerservice = new DataBaseLoggerService();
+            ILoggerService fileLoggerService = new FileLoggerService();
+
             ApplicationManager application = new ApplicationManager();
-            application.Apply(necessity);
-            
+            application.Apply(necessity,databaseloggerservice);//-->bunun ciktisi : Necessity credit is accounted ve Logged on the database
+                                                               //surdurulebilirligi saglar bu yontem
+            ICreditBaseManager merchantCredit = new MerchantCredit();
+            ILoggerService smsLogger = new SmsLoggerService();
+
+            application.Apply(merchantCredit, smsLogger);
+            //List ile hem sms hem database e loglayabilirsin. video 2.44 den itibaren gorebilirsin ya da githubdan bulabilisin
 
 
             // bu kisim mulakatta cikacaktir ve seni ise sokacak hamle budur soyutlamada
 
 
             List<ICreditBaseManager> credits = new List<ICreditBaseManager>() {necessity,morgage };
-            application.KrediOnBilgilendirmesiYap(credits);
+            //application.KrediOnBilgilendirmesiYap(credits);
 
-            //2.00 dk kaldik
+            
         }
     }
 }

@@ -6,7 +6,7 @@ namespace OOP3
 {
     class ApplicationManager
     {
-        public void Apply(ICreditBaseManager creditBaseManager)
+        public void Apply(ICreditBaseManager creditBaseManager,ILoggerService logger)
         {
             //kredi basvurusu
             //------------COK ONEMLI--------
@@ -15,7 +15,7 @@ namespace OOP3
             // morgage.Count();// BUNU ANLATTIKTAN SONRA METODA INTERFACE ILE PARAMETRE EKLEDI
 
             creditBaseManager.Count(); // BU YETERLI TUM KREDI CESTILERI ICIN
-
+            logger.Log();
 
         }
 
