@@ -44,8 +44,29 @@ namespace LinqProject
                 Console.WriteLine(item.ProdName+":"+item.UnitPrice);
             }
 
+            GetProd(products);
+            
+        }
 
-            //dk  21
+
+        static List<Product> GetProd(List<Product> products)
+        {
+            List<Product> filteredProd = new List<Product>();
+
+            foreach (var prod in products)
+            {
+                if (prod.UnitPrice > 1500 && prod.UnitsInStock > 3)
+                {
+                    filteredProd.Add(prod);
+                }
+            }
+
+            return filteredProd;
+        }
+
+        static List<Product> GetProductsLinq(List<Product> products)
+        {
+            return products.Where(p => p.UnitPrice > 1500 && p.UnitsInStock > 3).ToList(); //where foreachin yaptigini yapiyor
         }
 
         
